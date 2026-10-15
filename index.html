@@ -78,7 +78,7 @@
 <dialog class="demo-dialog" aria-labelledby="demo-title">
 <button type="button" class="demo-close" aria-label="Chiudi">×</button>
 <h2 id="demo-title">Conosciamoci prima della demo</h2>
-<p>Indicaci il tuo ruolo per aiutarci a preparare l’incontro. Poi scegli il giorno e l’orario su Calendly.</p>
+<p>Indicaci il tuo ruolo per aiutarci a preparare l’incontro. Poi scegli giorno e orario: ricevi l’invito con il link Google Meet.</p>
 <form id="demo-form">
 <fieldset><legend>Qual è il tuo profilo professionale?</legend>
 <label class="demo-option"><input type="radio" name="profession" value="RSPP esterno" required>RSPP esterno</label>
@@ -87,7 +87,7 @@
 <label class="demo-option"><input type="radio" name="profession" value="Altro">Altro</label>
 <div class="demo-other" hidden><label for="demo-profession">Scrivi la tua professione</label><input id="demo-profession" name="otherProfession" maxlength="120" autocomplete="organization-title" disabled></div>
 </fieldset>
-<button class="button demo-submit" type="submit">Continua su Calendly →</button>
+<button class="button demo-submit" type="submit">Scegli giorno e orario →</button>
 <p class="demo-status" role="status" hidden></p>
 </form></dialog>
 <footer><div class="wrap"><p>© 2026 NewErgo · Strumento di supporto alla valutazione del rischio ergonomico. Il tecnico verifica e interpreta i risultati. Non fornisce diagnosi.</p></div></footer><script>
@@ -112,8 +112,8 @@ document.addEventListener('visibilitychange',start);
 reduced.addEventListener('change',start);
 window.addEventListener('resize',()=>{go(current);start()});
 
-// Inserire l’URL dell’evento Calendly confermato da NewErgo.
-const calendlyBookingUrl = '';
+// Pagina di prenotazione di Google Calendar (programma di appuntamenti con Google Meet), es. https://calendar.app.google/xxxx
+const bookingUrl = '';
 const demoEmail='gaino.marco@gmail.com';
 const demoDialog=document.querySelector('.demo-dialog');
 const demoForm=document.querySelector('#demo-form');
@@ -133,18 +133,18 @@ demoForm.addEventListener('submit',event=>{
  event.preventDefault();
  const profession=demoForm.elements.profession.value==='Altro'?otherProfession.value.trim():demoForm.elements.profession.value;
  if(!profession){otherProfession.setCustomValidity('Scrivi la tua professione');otherProfession.reportValidity();return;}
- if(!calendlyBookingUrl){
+ if(!bookingUrl){
   // Senza calendario: la richiesta parte via email con il profilo già indicato.
   const subject=encodeURIComponent('Demo NewErgo');
   const body=encodeURIComponent('Buongiorno,\nvorrei prenotare una demo di NewErgo.\n\nProfilo: '+profession+'\nAzienda/Studio: \nMansioni che vorrei vedere analizzate: \n\nGrazie');
   window.location.assign('mailto:'+demoEmail+'?subject='+subject+'&body='+body);
   demoDialog.close();return;
  }
- // Conserva il profilo in questa scheda; la trasmissione dipende dai campi dell’evento Calendly.
+ // Conserva il profilo in questa scheda; il modulo di prenotazione Google chiede nome ed email.
  try{sessionStorage.setItem('newergo-demo-profession',profession)}catch{}
- window.location.assign(calendlyBookingUrl);
+ window.location.assign(bookingUrl);
 });
-if(!calendlyBookingUrl){
+if(!bookingUrl){
  // Testi del dialogo coerenti con l'invio via email finché il calendario non è attivo.
  demoDialog.querySelector('p').textContent='Indicaci il tuo ruolo per aiutarci a preparare l’incontro. Riceverai una risposta entro un giorno lavorativo con le date disponibili.';
  document.querySelector('.demo-submit').textContent='Richiedi la demo via email →';
