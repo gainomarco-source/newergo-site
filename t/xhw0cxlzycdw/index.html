@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Il tuo tempario · NewErgo</title>
+<link rel="icon" href="/assets/brand/favicon-32.png">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="1ec0d027-be19-4d50-aca1-2958a1a28ffd" data-domains="www.newergo.it,newergo.it"></script>
+<style>
+@font-face{font-family:Inter;src:url(/assets/fonts/inter-latin.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--navy:#9fc8ee;--deep:#0b2238;--ink:#dce8f3;--muted:#9bb3c8;--line:#2a4a68;--ice:#10283f;--aqua:#2dc98a;--blue:#0090d4;--bg:#0b1c2c;--card:#10283f;--okbg:#0f3a2b;--oktx:#8be3bd;--badbg:#3a1a1a;--badtx:#f2b3b3;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:400;font-size:16px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 56px}
+header{display:flex;align-items:center;gap:10px;margin:4px 0 22px;font-weight:500;color:var(--navy)}
+header img{width:30px;height:30px;border-radius:7px}
+h1{font-size:28px;line-height:1.2;font-weight:500;color:var(--navy);margin:0 0 8px;letter-spacing:-.01em}
+h2{font-size:19px;font-weight:500;color:var(--navy);margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 22px}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:14px}
+label{display:block;font-size:14px;color:var(--muted)}
+input,select{width:100%;margin-top:5px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:16px}
+input:focus,select:focus{outline:2px solid var(--blue);outline-offset:1px}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.m{background:var(--ice);border-radius:10px;padding:12px 14px}
+.m small{display:block;font-size:12.5px;color:var(--muted)}
+.m b{font-weight:500;font-size:22px;color:var(--navy)}
+#verdict{margin:14px 0 0;padding:11px 14px;border-radius:10px;font-size:15px;display:none}
+.scale{margin:20px 0 4px;position:relative;height:10px;background:var(--ice);border:1px solid var(--line);border-radius:6px}
+.scale i{position:absolute;left:4%;width:96%;top:0;bottom:0;background:linear-gradient(90deg,var(--aqua),var(--blue));opacity:.35;border-radius:6px}
+.scale u{position:absolute;top:-5px;width:4px;height:18px;background:var(--navy);border-radius:2px;text-decoration:none;display:none}
+.ticks{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+.small{font-size:13px;color:var(--muted)}
+button{font:inherit;font-weight:500;background:var(--navy);color:#0b1c2c;border:0;border-radius:9px;padding:12px 20px;cursor:pointer}
+button:hover{filter:brightness(1.1)}
+.chk{display:flex;gap:10px;align-items:flex-start;margin:16px 0 14px;font-size:15px;color:var(--ink)}
+.chk input{width:auto;margin-top:4px}
+.pr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#msg{margin-top:12px;font-size:15px}
+.hp{position:absolute;left:-9999px}
+a{color:var(--blue)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img src="/assets/brand/newergo-mark-64.png" alt="">NewErgo</header>
+
+  <h1>Calcola il tempo e il costo della tua valutazione</h1>
+  <p class="sub">Un minuto, senza registrarti. Il calcolo avviene nel tuo browser: i numeri partono solo se premi «Invia».</p>
+
+  <section class="sec" aria-labelledby="h-calc">
+    <h2 id="h-calc">1 · I tuoi numeri</h2>
+    <p class="small" style="margin:0">Per una commessa. Compila quello che sai: il risultato si aggiorna mentre scrivi.</p>
+    <div class="grid">
+      <label>Postazioni da valutare<input id="np" type="number" inputmode="decimal" min="0" placeholder="es. 12"></label>
+      <label>Ore per postazione<input id="oh" type="number" inputmode="decimal" min="0" step="0.5" placeholder="es. 3"></label>
+      <label>Con o senza video<select id="vd"><option value="con">Con video</option><option value="senza">Senza video</option></select></label>
+      <label>Redazione e altre ore (totale)<input id="rd" type="number" inputmode="decimal" min="0" step="0.5" placeholder="es. 8"></label>
+      <label>Il tuo costo orario (€)<input id="co" type="number" inputmode="decimal" min="0" placeholder="es. 45"></label>
+      <label>Preventivo al cliente (€)<input id="pv" type="number" inputmode="decimal" min="0" placeholder="es. 2400"></label>
+    </div>
+    <div class="res" aria-live="polite">
+      <div class="m"><small>Ore totali</small><b id="r1">—</b></div>
+      <div class="m"><small>Costo del tuo tempo</small><b id="r2">—</b></div>
+      <div class="m"><small>Margine prima dei costi</small><b id="r3">—</b></div>
+      <div class="m"><small>Prezzo a postazione</small><b id="r4">—</b></div>
+    </div>
+    <p id="verdict"></p>
+    <p class="small" style="margin:18px 0 6px">Il tuo tempo per postazione rispetto ai riferimenti della letteratura</p>
+    <div class="scale"><i></i><u id="mark"></u></div>
+    <div class="ticks"><span>10 min</span><span>2 ore</span><span>4 ore</span></div>
+    <p class="small" style="margin-top:10px">Riferimenti: checklist sul posto 10–15 min (Colombini et al., 2000); indice su video 35–40 min (Aqueveque et al., 2023); indice in campo circa 4 ore (Chiasson et al., 2012). Non sono tempi medi validi per ogni azienda.</p>
+  </section>
+
+  <section class="sec" aria-labelledby="h-bench">
+    <h2 id="h-bench">2 · Il tuo contributo al benchmark</h2>
+    <p class="small" style="margin:0">Per costruire il primo benchmark dei prezzi registriamo, in forma anonima, tre numeri e quelli del tuo calcolo. Se le risposte sono sufficienti, ti mandiamo per primo il confronto.</p>
+    <form id="bf" novalidate>
+      <div class="grid">
+        <label>Quante postazioni valuti in un anno, circa<input id="bn" type="number" inputmode="decimal" min="0" placeholder="es. 40"></label>
+        <label>Ore medie per postazione<input id="bo" type="number" inputmode="decimal" min="0" step="0.5" placeholder="es. 3"></label>
+        <label>Con o senza video<select id="bv"><option value="con">Con video</option><option value="senza">Senza video</option><option value="misto">Dipende</option></select></label>
+      </div>
+      <div style="margin-top:14px"><span class="small">Prezzo medio che applichi a postazione (€), anche come fascia</span>
+        <div class="pr"><input id="pa" type="number" inputmode="decimal" min="0" placeholder="da" aria-label="Prezzo da"><input id="pb" type="number" inputmode="decimal" min="0" placeholder="a" aria-label="Prezzo a"></div>
+      </div>
+      <input class="hp" id="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="chk"><input id="ok" type="checkbox"><span>Acconsento alla registrazione anonima dei numeri che ho inserito (calcolo e benchmark) per costruire il benchmark. Non raccogliamo nome, email né altri dati personali.</span></label>
+      <button type="submit" id="send">Invia in forma anonima</button>
+      <p id="msg" role="status"></p>
+    </form>
+    <p class="small" style="margin-top:14px">Vuoi ricevere il confronto? Scrivi a <a href="mailto:info@newergo.it?subject=Benchmark%20tempi%20di%20valutazione">info@newergo.it</a>: l'email non viene collegata ai numeri che hai inviato qui.</p>
+  </section>
+
+  <p class="small">Questa pagina non è indicizzata e non ha link dal sito. <a href="/privacy.html">Informativa privacy</a> · NewErgo · <a href="https://www.newergo.it">www.newergo.it</a></p>
+</div>
+
+<script>
+var ENDPOINT = "https://docs.google.com/forms/d/e/1FAIpQLSfajHXDo1m9zqnZKkrUB23HYhQjSFqRNTWlRfbVZTtCaxw2LA/formResponse";
+var FORM_FIELD = "entry.1021448872";
+function $(i){return document.getElementById(i)}
+function num(i){var v=parseFloat($(i).value);return isNaN(v)?null:v}
+function fmt(n){return Math.round(n).toLocaleString("it-IT")}
+var calcSent=false, touchedBo=false;
+function track(n,d){try{if(window.umami){d?window.umami.track(n,d):window.umami.track(n)}}catch(e){}}
+var t0=performance.now(),started=false,sentTime=0;
+function secs(){return Math.max(10,Math.round((performance.now()-t0)/10000)*10)}
+document.addEventListener("input",function(){if(!started){started=true;track("tempario-inizio-compilazione")}},true);
+function sendTime(){if(sentTime>=3)return;sentTime++;track("tempario-tempo",{secondi:secs(),compilato:started?"si":"no"})}
+document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")sendTime()});
+window.addEventListener("pagehide",sendTime);
+function calc(){
+  var np=num("np"),oh=num("oh"),rd=num("rd")||0,co=num("co"),pv=num("pv");
+  var ore=(np!==null&&oh!==null)?np*oh+rd:null;
+  $("r1").textContent=ore===null?"—":fmt(ore)+" h";
+  var costo=(ore!==null&&co!==null)?ore*co:null;
+  $("r2").textContent=costo===null?"—":fmt(costo)+" €";
+  var marg=(costo!==null&&pv!==null)?pv-costo:null;
+  $("r3").textContent=marg===null?"—":fmt(marg)+" €";
+  $("r4").textContent=(np&&pv!==null)?fmt(pv/np)+" €":"—";
+  var v=$("verdict");
+  if(marg===null){v.style.display="none"}
+  else{
+    v.style.display="block";
+    if(marg<0){v.style.background="var(--badbg)";v.style.color="var(--badtx)";v.textContent="Il tuo tempo costa più del preventivo: su questa commessa lavori in perdita di "+fmt(-marg)+" €."}
+    else{v.style.background="var(--okbg)";v.style.color="var(--oktx)";v.textContent="Il preventivo copre il tuo tempo, con "+fmt(marg)+" € di margine prima di trasferte e altri costi."}
+  }
+  var m=$("mark");
+  if(oh!==null&&oh>0){var p=Math.min(Math.max((oh*60-10)/230,0),1)*92+4;m.style.left="calc("+p+"% - 2px)";m.style.display="block"}else{m.style.display="none"}
+  if(!touchedBo&&oh!==null)$("bo").value=oh;
+  if(!calcSent&&marg!==null){calcSent=true;track("tempario-calcolo")}
+}
+["np","oh","rd","co","pv"].forEach(function(i){$(i).addEventListener("input",calc)});
+$("bo").addEventListener("input",function(){touchedBo=true});
+$("vd").addEventListener("change",function(){$("bv").value=$("vd").value});
+function bad(m){$("msg").style.color="var(--badtx)";$("msg").textContent=m}
+$("bf").addEventListener("submit",function(e){
+  e.preventDefault();
+  if($("web").value)return;
+  var bn=num("bn"),bo=num("bo"),pa=num("pa"),pb=num("pb");
+  if(bn===null||bn<=0||bn>5000)return bad("Indica quante postazioni valuti in un anno (un numero tra 1 e 5000).");
+  if(bo===null||bo<=0||bo>200)return bad("Indica le ore medie per postazione (tra 0,5 e 200).");
+  if(pa===null||pa<0||pa>20000)return bad("Indica il prezzo medio a postazione, anche solo il valore \"da\".");
+  if(pb!==null&&(pb<pa||pb>20000))return bad("Il valore \"a\" deve essere uguale o maggiore di \"da\".");
+  if(!$("ok").checked)return bad("Spunta la casella per condividere i tre dati in forma anonima.");
+  var d={t:new Date().toISOString().slice(0,10),
+    calc_postazioni:num("np"),calc_ore_postazione:num("oh"),calc_video:$("vd").value,calc_redazione:num("rd"),calc_costo_orario:num("co"),calc_preventivo:num("pv"),
+    postazioni_anno:bn,ore_postazione:bo,video:$("bv").value,prezzo_da:pa,prezzo_a:pb===null?pa:pb};
+  var line=["v1",d.calc_postazioni,d.calc_ore_postazione,d.calc_video,d.calc_redazione,d.calc_costo_orario,d.calc_preventivo,d.postazioni_anno,d.ore_postazione,d.video,d.prezzo_da,d.prezzo_a].map(function(x){return x===null?"":String(x).replace(".",",")}).join("|");
+  var btn=$("send");btn.disabled=true;
+  function done(){$("msg").style.color="var(--oktx)";$("msg").textContent="Grazie. Il tuo contributo è arrivato, in forma anonima.";track("benchmark-invio");btn.disabled=false}
+  if(!ENDPOINT){
+    window.location.href="mailto:info@newergo.it?subject=Benchmark%20tempi%20di%20valutazione&body="+encodeURIComponent(line);
+    $("msg").style.color="var(--ink)";$("msg").textContent="Si è aperta una bozza di email con i tuoi numeri: inviala per partecipare. Con l'email il tuo indirizzo sarebbe visibile.";
+    btn.disabled=false;return;
+  }
+  var fd=new URLSearchParams();fd.append(FORM_FIELD||"dati",line);
+  fetch(ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:fd.toString()}).then(done).catch(function(){bad("Non siamo riusciti a inviare. Riprova tra poco, oppure scrivici a info@newergo.it.");btn.disabled=false});
+});
+track("tempario-apertura");
+</script>
+</body>
+</html>
