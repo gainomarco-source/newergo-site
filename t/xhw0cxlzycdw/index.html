@@ -159,7 +159,7 @@ $("bf").addEventListener("submit",function(e){
   var fd=new URLSearchParams();fd.append(FORM_FIELD||"dati",line);
   fetch(ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:fd.toString()}).then(done).catch(function(){bad("Non siamo riusciti a inviare. Riprova tra poco, oppure scrivici a info@newergo.it.");btn.disabled=false});
 });
-track("tempario-apertura");
+window.addEventListener("load",function(){track("tempario-apertura")});
 </script>
 </body>
 </html>
