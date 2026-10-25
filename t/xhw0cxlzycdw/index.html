@@ -150,7 +150,7 @@ $("bf").addEventListener("submit",function(e){
     postazioni_anno:bn,ore_postazione:bo,video:$("bv").value,prezzo_da:pa,prezzo_a:pb===null?pa:pb};
   var line=["v1",d.calc_postazioni,d.calc_ore_postazione,d.calc_video,d.calc_redazione,d.calc_costo_orario,d.calc_preventivo,d.postazioni_anno,d.ore_postazione,d.video,d.prezzo_da,d.prezzo_a].map(function(x){return x===null?"":String(x).replace(".",",")}).join("|");
   var btn=$("send");btn.disabled=true;
-  function done(){$("msg").style.color="var(--oktx)";$("msg").textContent="Grazie. Il tuo contributo è arrivato, in forma anonima.";track("benchmark-invio");btn.disabled=false}
+  function done(){$("msg").style.color="var(--oktx)";$("msg").textContent="Grazie. Il tuo contributo è arrivato, in forma anonima. Ti portiamo sul sito di NewErgo…";track("benchmark-invio");setTimeout(function(){window.location.href="https://www.newergo.it/?utm_source=tempario&utm_medium=pdf&utm_campaign=benchmark"},2500)}
   if(!ENDPOINT){
     window.location.href="mailto:info@newergo.it?subject=Benchmark%20tempi%20di%20valutazione&body="+encodeURIComponent(line);
     $("msg").style.color="var(--ink)";$("msg").textContent="Si è aperta una bozza di email con i tuoi numeri: inviala per partecipare. Con l'email il tuo indirizzo sarebbe visibile.";
