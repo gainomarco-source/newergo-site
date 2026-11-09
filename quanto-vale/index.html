@@ -34,7 +34,7 @@ input:focus,select:focus{outline:2px solid var(--aqua);outline-offset:1px}
 .small{font-size:13.5px;color:var(--muted)}
 .chk{display:flex;gap:10px;align-items:flex-start;margin:16px 0 14px;font-size:14.5px}.chk input{width:auto;margin-top:4px}
 .pr{display:grid;grid-template-columns:1fr 1fr;gap:10px}#msg{margin-top:12px;font-size:15px}.hp{position:absolute;left:-9999px}
-.exits{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:8px}
+.exits{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:8px}
 .exit{background:white;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px}
 .exit h3{font-size:17px;font-weight:700}.exit p{font-size:14.5px;color:var(--muted);flex:1}.exit .button{min-height:44px;padding:10px 18px;font-size:15px}
 .fonti{font-size:14.5px;color:var(--muted);margin:30px 0 0}.fonti li{margin:0 0 6px}
@@ -77,13 +77,11 @@ footer{padding:28px 0;font-size:12px;color:var(--muted)}
 
 <section class="sec" id="exits" aria-labelledby="h-exits">
   <h2 id="h-exits">2 · Cosa puoi farne</h2>
-  <p class="lead">Tre uscite. Nessuna è obbligatoria.</p>
+  <p class="lead">Due uscite. Nessuna è obbligatoria.</p>
   <div class="exits">
     <div class="exit"><h3>Tieniti il preventivo</h3><p>Stampa o salva in PDF questa pagina con i tuoi numeri. Oppure mandacela: ti rispondiamo con i tuoi numeri impaginati e il confronto con la letteratura.</p>
       <button class="button ghost" id="print" type="button">Salva in PDF</button>
       <a class="button ghost" id="x-email" href="#" style="margin-top:8px">Ricevilo via email</a></div>
-    <div class="exit"><h3>Verifica il conteggio su un tuo video</h3><p>Mandaci 1–2 minuti di video di una postazione, anche dal telefono. Ti rimandiamo il conteggio delle azioni tecniche con il confronto col tuo, entro 48 ore. Niente da installare.</p>
-      <a class="button" id="x-video" href="mailto:info@newergo.it?subject=Video%20di%20una%20postazione%20da%20contare&body=Ciao%2C%20vorrei%20il%20conteggio%20delle%20azioni%20tecniche%20su%20una%20mia%20postazione.%0A%0ACompito%20ripreso%3A%20%0ADurata%20del%20video%3A%20%0AIl%20mio%20conteggio%20(se%20l'ho%20fatto)%3A%20%0A%0AAllego%20il%20video%20o%20un%20link%20per%20scaricarlo.%20Il%20video%20non%20mostra%20volti%20riconoscibili%20oppure%20ho%20il%20consenso%20delle%20persone%20riprese.">Mandaci il video</a></div>
     <div class="exit"><h3>Provalo sulle tue postazioni</h3><p>NewErgo Assessment conta le azioni dal video e compila OCRA, REBA e NIOSH; il tecnico verifica e firma. Prenota mezz'ora: ti mostriamo il flusso su una mansione che ti interessa.</p>
       <a class="button" id="x-demo" href="https://www.newergo.it/?utm_source=sito&utm_medium=pagina_quanto_vale&utm_campaign=demo#contatti">Prenota una demo</a></div>
   </div>
@@ -171,7 +169,6 @@ $("vd").addEventListener("change",function(){$("bv").value=$("vd").value;updateE
 $("bo").addEventListener("input",function(){touchedBo=true});
 $("print").addEventListener("click",function(){track("quanto-vale-stampa",P);window.print()});
 $("x-email").addEventListener("click",function(){track("quanto-vale-uscita-email",P)});
-$("x-video").addEventListener("click",function(){track("quanto-vale-uscita-video",P)});
 $("x-demo").addEventListener("click",function(){track("quanto-vale-uscita-prova",P)});
 function bad(m){$("msg").style.color="var(--badtx)";$("msg").textContent=m}
 $("bf").addEventListener("submit",function(e){
