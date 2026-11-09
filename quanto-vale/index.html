@@ -1,0 +1,196 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quanto vale la tua valutazione ergonomica? Ore, costo e margine</title>
+<meta name="description" content="Calcola in un minuto quante ore richiede una valutazione ergonomica (OCRA, NIOSH), quanto ti costa e quanto margine lascia il preventivo. Confronto con i tempi della letteratura.">
+<link rel="canonical" href="https://www.newergo.it/quanto-vale/"><meta name="robots" content="index,follow">
+<link rel="icon" href="/assets/brand/favicon-32.png">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="1ec0d027-be19-4d50-aca1-2958a1a28ffd" data-domains="www.newergo.it,newergo.it"></script>
+<meta property="og:type" content="website"><meta property="og:locale" content="it_IT"><meta property="og:site_name" content="NewErgo"><meta property="og:url" content="https://www.newergo.it/quanto-vale/"><meta property="og:title" content="Quanto vale la tua valutazione ergonomica? Ore, costo e margine"><meta property="og:description" content="Quante ore richiede una valutazione ergonomica, quanto ti costa e quanto margine lascia il preventivo. Calcolo nel browser, senza registrazione."><meta property="og:image" content="https://www.newergo.it/assets/brand/og-newergo.jpg">
+<meta name="theme-color" content="#14355a">
+<style>
+@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format("woff2")}
+:root{--navy:#14355a;--ice:#f0f7ff;--aqua:#2dc98a;--line:#c9d8e7;--muted:#536b83;--okbg:#e4f7ee;--oktx:#146b48;--badbg:#fdeaea;--badtx:#9b2626}
+*{box-sizing:border-box}body{margin:0;font:17px/1.6 Inter,system-ui,sans-serif;color:var(--navy);background:white}
+h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.12;letter-spacing:-.03em}a{color:inherit}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}.nav{background:var(--navy);color:white;position:sticky;top:0;z-index:20}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px}.brand{display:flex;gap:10px;align-items:center;font-weight:700;font-size:21px;text-decoration:none}.brand img{width:28px;height:28px;border-radius:6px}
+.nav nav{display:flex;gap:22px;font-size:14px;align-items:center}.nav nav a{text-decoration:none}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 25px;border-radius:999px;text-decoration:none;background:var(--navy);color:white;font-weight:700;border:0;font:inherit;font-weight:700;cursor:pointer}.button.light{background:white;color:var(--navy)}.button.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}.button:disabled{opacity:.5;cursor:default}
+.hero{background:var(--navy);color:white;padding:64px 0 56px}.eyebrow{font-size:14px;font-weight:500;margin-bottom:14px;color:#cfe0f0}
+.hero h1{font-size:clamp(34px,4.8vw,56px);font-weight:700;max-width:18ch}.hero h1 em{font-style:normal;color:var(--aqua)}.hero .intro{font-size:19px;line-height:1.5;max-width:56ch;margin-top:20px;color:#e4edf6}
+main{padding:40px 0 8px}.col{max-width:820px;margin:auto;padding:0 24px}
+.sec{background:var(--ice);border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin:0 0 22px}
+.sec h2{font-size:22px;font-weight:700;margin:0 0 6px}.lead{color:var(--muted);font-size:15px;margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+label{display:block;font-size:14px;color:var(--muted)}
+input,select{width:100%;margin-top:5px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--navy);font:inherit;font-size:16px}
+input:focus,select:focus{outline:2px solid var(--aqua);outline-offset:1px}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px}
+.m{background:white;border:1px solid var(--line);border-radius:12px;padding:12px 14px}.m small{display:block;font-size:12.5px;color:var(--muted)}.m b{font-weight:700;font-size:24px}
+#verdict{margin:14px 0 0;padding:12px 14px;border-radius:12px;font-size:15.5px;display:none}
+.scale{margin:22px 0 4px;position:relative;height:10px;background:white;border:1px solid var(--line);border-radius:6px}
+.scale i{position:absolute;left:4%;width:92%;top:0;bottom:0;background:linear-gradient(90deg,var(--aqua),var(--navy));opacity:.35;border-radius:6px}
+.scale u{position:absolute;top:-5px;width:4px;height:18px;background:var(--navy);border-radius:2px;display:none}
+.ticks{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+.small{font-size:13.5px;color:var(--muted)}
+.chk{display:flex;gap:10px;align-items:flex-start;margin:16px 0 14px;font-size:14.5px}.chk input{width:auto;margin-top:4px}
+.pr{display:grid;grid-template-columns:1fr 1fr;gap:10px}#msg{margin-top:12px;font-size:15px}.hp{position:absolute;left:-9999px}
+.exits{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:8px}
+.exit{background:white;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.exit h3{font-size:17px;font-weight:700}.exit p{font-size:14.5px;color:var(--muted);flex:1}.exit .button{min-height:44px;padding:10px 18px;font-size:15px}
+.fonti{font-size:14.5px;color:var(--muted);margin:30px 0 0}.fonti li{margin:0 0 6px}
+.closing{padding:72px 24px;text-align:center;background:var(--navy);color:white;margin-top:56px}.closing h2{font-size:clamp(28px,4vw,42px);margin:0 auto 16px;max-width:22ch}.closing p{margin:0 auto 26px;max-width:52ch;color:#e4edf6}
+footer{padding:28px 0;font-size:12px;color:var(--muted)}
+@media(max-width:640px){.nav nav a:not(.button){display:none}.hero{padding:44px 0 40px}.sec{padding:20px 18px}}
+@media print{.nav,.hero,.closing,footer,#bench,#exits,.noprint{display:none!important}body{font-size:13px}.sec{border:1px solid #999;background:white}main{padding:0}.printhead{display:block!important}}
+.printhead{display:none;margin:0 0 16px}
+</style></head><body>
+<header class="nav"><div class="wrap"><a class="brand" href="/"><img src="/assets/brand/newergo-mark-64.png" alt="" width="28" height="28">NewErgo</a><nav aria-label="Navigazione"><a href="/strumenti/">Strumenti</a><a href="/#metodi">Metodi</a><a class="button light" data-umami-event="demo-click-quanto-vale" href="https://www.newergo.it/?utm_source=sito&utm_medium=pagina_quanto_vale&utm_campaign=demo#contatti">Prenota una demo</a></nav></div></header>
+
+<section class="hero"><div class="wrap"><p class="eyebrow">Strumento gratuito · Per RSPP e consulenti</p><h1>Quanto vale <em>la tua valutazione</em></h1><p class="intro">Inserisci postazioni, ore, costo orario e preventivo: vedi cosa ti costa davvero una valutazione OCRA o NIOSH fatta bene e quanto margine resta. Un minuto, senza registrarti: il calcolo avviene nel tuo browser e nulla parte se non lo decidi tu.</p></div></section>
+
+<main><div class="col">
+<p class="printhead"><strong>NewErgo · Quanto vale la tua valutazione</strong> · www.newergo.it/quanto-vale · calcolo del <span id="pdate"></span></p>
+
+<section class="sec" aria-labelledby="h-calc">
+  <h2 id="h-calc">1 · I tuoi numeri</h2>
+  <p class="lead">Per una commessa. Compila quello che sai: il risultato si aggiorna mentre scrivi.</p>
+  <div class="grid">
+    <label>Postazioni da valutare<input id="np" type="number" inputmode="decimal" min="0" placeholder="es. 12"></label>
+    <label>Ore per postazione<input id="oh" type="number" inputmode="decimal" min="0" step="0.5" placeholder="es. 3"></label>
+    <label>Con o senza video<select id="vd"><option value="con">Con video</option><option value="senza">Senza video</option></select></label>
+    <label>Redazione e altre ore (totale)<input id="rd" type="number" inputmode="decimal" min="0" step="0.5" placeholder="es. 8"></label>
+    <label>Il tuo costo orario (€)<input id="co" type="number" inputmode="decimal" min="0" placeholder="es. 45"></label>
+    <label>Preventivo al cliente (€)<input id="pv" type="number" inputmode="decimal" min="0" placeholder="es. 2400"></label>
+  </div>
+  <div class="res" aria-live="polite">
+    <div class="m"><small>Ore totali</small><b id="r1">—</b></div>
+    <div class="m"><small>Costo del tuo tempo</small><b id="r2">—</b></div>
+    <div class="m"><small>Margine prima dei costi</small><b id="r3">—</b></div>
+    <div class="m"><small>Prezzo a postazione</small><b id="r4">—</b></div>
+  </div>
+  <p id="verdict"></p>
+  <p class="small" style="margin:20px 0 6px">Il tuo tempo per postazione rispetto ai riferimenti della letteratura</p>
+  <div class="scale"><i></i><u id="mark"></u></div>
+  <div class="ticks"><span>10 min</span><span>2 ore</span><span>4 ore</span></div>
+  <p class="small" style="margin-top:10px">Riferimenti: checklist sul posto 10–15 min (Colombini et al., 2000); indice su video 35–40 min (Aqueveque et al., 2023); indice in campo circa 4 ore (Chiasson et al., 2012). Non sono tempi medi validi per ogni azienda.</p>
+</section>
+
+<section class="sec" id="exits" aria-labelledby="h-exits">
+  <h2 id="h-exits">2 · Cosa puoi farne</h2>
+  <p class="lead">Tre uscite. Nessuna è obbligatoria.</p>
+  <div class="exits">
+    <div class="exit"><h3>Tieniti il preventivo</h3><p>Stampa o salva in PDF questa pagina con i tuoi numeri. Oppure mandacela: ti rispondiamo con i tuoi numeri impaginati e il confronto con la letteratura.</p>
+      <button class="button ghost" id="print" type="button">Salva in PDF</button>
+      <a class="button ghost" id="x-email" href="#" style="margin-top:8px">Ricevilo via email</a></div>
+    <div class="exit"><h3>Verifica il conteggio su un tuo video</h3><p>Mandaci 1–2 minuti di video di una postazione, anche dal telefono. Ti rimandiamo il conteggio delle azioni tecniche con il confronto col tuo, entro 48 ore. Niente da installare.</p>
+      <a class="button" id="x-video" href="mailto:info@newergo.it?subject=Video%20di%20una%20postazione%20da%20contare&body=Ciao%2C%20vorrei%20il%20conteggio%20delle%20azioni%20tecniche%20su%20una%20mia%20postazione.%0A%0ACompito%20ripreso%3A%20%0ADurata%20del%20video%3A%20%0AIl%20mio%20conteggio%20(se%20l'ho%20fatto)%3A%20%0A%0AAllego%20il%20video%20o%20un%20link%20per%20scaricarlo.%20Il%20video%20non%20mostra%20volti%20riconoscibili%20oppure%20ho%20il%20consenso%20delle%20persone%20riprese.">Mandaci il video</a></div>
+    <div class="exit"><h3>Provalo sulle tue postazioni</h3><p>NewErgo Assessment conta le azioni dal video e compila OCRA, REBA e NIOSH; il tecnico verifica e firma. Prenota mezz'ora: ti mostriamo il flusso su una mansione che ti interessa.</p>
+      <a class="button" id="x-demo" href="https://www.newergo.it/?utm_source=sito&utm_medium=pagina_quanto_vale&utm_campaign=demo#contatti">Prenota una demo</a></div>
+  </div>
+</section>
+
+<section class="sec" id="bench" aria-labelledby="h-bench">
+  <h2 id="h-bench">3 · Il tuo contributo al benchmark</h2>
+  <p class="lead">Nessun listino pubblico dice quanto costa una valutazione OCRA a postazione. Stiamo costruendo il primo benchmark dei tempi e dei prezzi: tre numeri, in forma anonima. Quando le risposte bastano, lo pubblichiamo qui.</p>
+  <form id="bf" novalidate>
+    <div class="grid">
+      <label>Quante postazioni valuti in un anno, circa<input id="bn" type="number" inputmode="decimal" min="0" placeholder="es. 40"></label>
+      <label>Ore medie per postazione<input id="bo" type="number" inputmode="decimal" min="0" step="0.5" placeholder="es. 3"></label>
+      <label>Con o senza video<select id="bv"><option value="con">Con video</option><option value="senza">Senza video</option><option value="misto">Dipende</option></select></label>
+    </div>
+    <div style="margin-top:14px"><span class="small">Prezzo medio che applichi a postazione (€), anche come fascia</span>
+      <div class="pr"><input id="pa" type="number" inputmode="decimal" min="0" placeholder="da" aria-label="Prezzo da"><input id="pb" type="number" inputmode="decimal" min="0" placeholder="a" aria-label="Prezzo a"></div>
+    </div>
+    <input class="hp" id="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label class="chk"><input id="ok" type="checkbox"><span>Acconsento alla registrazione anonima dei numeri che ho inserito (calcolo e benchmark) per costruire il benchmark. Non raccogliamo nome, email né altri dati personali.</span></label>
+    <button type="submit" class="button" id="send">Invia in forma anonima</button>
+    <p id="msg" role="status"></p>
+  </form>
+</section>
+
+<section aria-labelledby="h-why" style="margin-top:34px">
+  <h2 id="h-why" style="font-size:24px;font-weight:700;margin:0 0 12px">Perché misurare quanto vale</h2>
+  <p style="margin:0 0 14px">Dalle conversazioni con RSPP e consulenti del Nord-Est, tra giugno e ottobre 2026, una cosa torna sempre: una valutazione OCRA fatta bene costa più tempo di quanto il mercato sia disposto a pagare. Un consulente ci ha detto di venderla a circa 350 € a postazione e di metterci più di una giornata. Il risultato è che spesso non si fa, o si fa in perdita.</p>
+  <p style="margin:0 0 14px">Questo strumento serve a vedere il proprio numero prima di fare il preventivo. Il riepilogo di quelle conversazioni, con i tempi della letteratura e i costi INAIL delle malattie professionali, è nel report <em>Quanto costa valutare bene una postazione</em>: scrivici per riceverlo.</p>
+  <ul class="fonti">
+    <li>Colombini D., Occhipinti E. et al. (2000) e Occhipinti E., Colombini D. (2005), citati in Paulsen R.J. (2013), tesi MSc, Colorado State University: checklist OCRA sul posto 10–15 min per un ciclo di 30 s; indice OCRA «45 minuti o più».</li>
+    <li>Aqueveque P. et al. (2023), <em>Sensors</em> 23(17), 7623, tabella 8: analisi dell'indice OCRA da video registrato, media 33–39 min.</li>
+    <li>Chiasson M.-E., Imbeau D., Aubry K., Delisle A. (2012), <em>Int. J. Ind. Ergon.</em> 42(5), 478–488, citato in Paulsen 2013: analisi 70 min più studio dei tempi 170 min a postazione; la somma di circa 4 ore è nostra.</li>
+    <li>Prezzo di circa 350 € a postazione: dichiarazione di un consulente intervistato, settembre 2026. Non è un prezzo di mercato.</li>
+  </ul>
+</section>
+</div>
+
+<section class="closing"><h2>Il lavoro che oggi fai in perdita può diventare vendibile?</h2><p>È la domanda da cui nasce NewErgo Assessment. Guarda come entra nella tua valutazione, su una mansione che scegli tu.</p><a class="button light" data-umami-event="demo-click-quanto-vale" href="https://www.newergo.it/?utm_source=sito&utm_medium=pagina_quanto_vale&utm_campaign=demo#contatti">Prenota una demo</a></section></main>
+<footer><div class="wrap">© NewErgo · <a href="/privacy.html">Privacy</a> · <a href="/strumenti/">Strumenti</a> · <a href="https://www.linkedin.com/company/newergo/">LinkedIn</a></div></footer>
+
+<script>
+var ENDPOINT="https://docs.google.com/forms/d/e/1FAIpQLSfajHXDo1m9zqnZKkrUB23HYhQjSFqRNTWlRfbVZTtCaxw2LA/formResponse";
+var FORM_FIELD="entry.1021448872";
+function $(i){return document.getElementById(i)}
+function num(i){var v=parseFloat($(i).value);return isNaN(v)?null:v}
+function fmt(n){return Math.round(n).toLocaleString("it-IT")}
+function track(n,d){try{if(window.umami){d?window.umami.track(n,d):window.umami.track(n)}}catch(e){}}
+var P={versione:"pubblica"};
+var calcSent=false,touchedBo=false,t0=performance.now(),started=false,sentTime=0;
+function secs(){return Math.max(10,Math.round((performance.now()-t0)/10000)*10)}
+document.addEventListener("input",function(){if(!started){started=true;track("quanto-vale-inizio-compilazione",P)}},true);
+function sendTime(){if(sentTime>=3)return;sentTime++;track("quanto-vale-tempo",{secondi:secs(),compilato:started?"si":"no",versione:"pubblica"})}
+document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")sendTime()});
+window.addEventListener("pagehide",sendTime);
+$("pdate").textContent=new Date().toLocaleDateString("it-IT");
+function calc(){
+  var np=num("np"),oh=num("oh"),rd=num("rd")||0,co=num("co"),pv=num("pv");
+  var ore=(np!==null&&oh!==null)?np*oh+rd:null;
+  $("r1").textContent=ore===null?"—":fmt(ore)+" h";
+  var costo=(ore!==null&&co!==null)?ore*co:null;
+  $("r2").textContent=costo===null?"—":fmt(costo)+" €";
+  var marg=(costo!==null&&pv!==null)?pv-costo:null;
+  $("r3").textContent=marg===null?"—":fmt(marg)+" €";
+  $("r4").textContent=(np&&pv!==null)?fmt(pv/np)+" €":"—";
+  var v=$("verdict");
+  if(marg===null){v.style.display="none"}
+  else{v.style.display="block";
+    if(marg<0){v.style.background="var(--badbg)";v.style.color="var(--badtx)";v.textContent="Il tuo tempo costa più del preventivo: su questa commessa lavori in perdita di "+fmt(-marg)+" €."}
+    else{v.style.background="var(--okbg)";v.style.color="var(--oktx)";v.textContent="Il preventivo copre il tuo tempo, con "+fmt(marg)+" € di margine prima di trasferte e altri costi."}}
+  var m=$("mark");
+  if(oh!==null&&oh>0){var p=Math.min(Math.max((oh*60-10)/230,0),1)*92+4;m.style.left="calc("+p+"% - 2px)";m.style.display="block"}else{m.style.display="none"}
+  if(!touchedBo&&oh!==null)$("bo").value=oh;
+  if(!calcSent&&marg!==null){calcSent=true;track("quanto-vale-calcolo",P)}
+  updateEmail();
+}
+function updateEmail(){
+  var body="Ciao, vi mando i numeri della mia valutazione per riceverli impaginati con il confronto.\n\n"+
+    "Postazioni: "+($("np").value||"-")+"\nOre per postazione: "+($("oh").value||"-")+" ("+$("vd").value+" video)\n"+
+    "Redazione e altre ore: "+($("rd").value||"-")+"\nCosto orario: "+($("co").value||"-")+" €\nPreventivo al cliente: "+($("pv").value||"-")+" €\n\n"+
+    "Ore totali: "+$("r1").textContent+"\nCosto del mio tempo: "+$("r2").textContent+"\nMargine: "+$("r3").textContent+"\nPrezzo a postazione: "+$("r4").textContent+"\n";
+  $("x-email").href="mailto:info@newergo.it?subject="+encodeURIComponent("Quanto vale la mia valutazione")+"&body="+encodeURIComponent(body);
+}
+["np","oh","rd","co","pv"].forEach(function(i){$(i).addEventListener("input",calc)});
+$("vd").addEventListener("change",function(){$("bv").value=$("vd").value;updateEmail()});
+$("bo").addEventListener("input",function(){touchedBo=true});
+$("print").addEventListener("click",function(){track("quanto-vale-stampa",P);window.print()});
+$("x-email").addEventListener("click",function(){track("quanto-vale-uscita-email",P)});
+$("x-video").addEventListener("click",function(){track("quanto-vale-uscita-video",P)});
+$("x-demo").addEventListener("click",function(){track("quanto-vale-uscita-prova",P)});
+function bad(m){$("msg").style.color="var(--badtx)";$("msg").textContent=m}
+$("bf").addEventListener("submit",function(e){
+  e.preventDefault();
+  if($("web").value)return;
+  var bn=num("bn"),bo=num("bo"),pa=num("pa"),pb=num("pb");
+  if(bn===null||bn<=0||bn>5000)return bad("Indica quante postazioni valuti in un anno (un numero tra 1 e 5000).");
+  if(bo===null||bo<=0||bo>200)return bad("Indica le ore medie per postazione (tra 0,5 e 200).");
+  if(pa===null||pa<0||pa>20000)return bad("Indica il prezzo medio a postazione, anche solo il valore \"da\".");
+  if(pb!==null&&(pb<pa||pb>20000))return bad("Il valore \"a\" deve essere uguale o maggiore di \"da\".");
+  if(!$("ok").checked)return bad("Spunta la casella per condividere i tre dati in forma anonima.");
+  var line=["v2p",num("np"),num("oh"),$("vd").value,num("rd"),num("co"),num("pv"),bn,bo,$("bv").value,pa,pb===null?pa:pb].map(function(x){return x===null?"":String(x).replace(".",",")}).join("|");
+  var btn=$("send");btn.disabled=true;
+  var fd=new URLSearchParams();fd.append(FORM_FIELD,line);
+  fetch(ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:fd.toString()})
+    .then(function(){$("msg").style.color="var(--oktx)";$("msg").textContent="Grazie. Il tuo contributo è arrivato, in forma anonima. Quando il benchmark è pronto lo pubblichiamo in questa pagina.";track("benchmark-invio",P)})
+    .catch(function(){bad("Non siamo riusciti a inviare. Riprova tra poco, oppure scrivici a info@newergo.it.");btn.disabled=false});
+});
+updateEmail();
+window.addEventListener("load",function(){track("quanto-vale-apertura",P)});
+</script>
+</body></html>
