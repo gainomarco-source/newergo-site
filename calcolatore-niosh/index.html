@@ -1,0 +1,189 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calcolatore NIOSH online: peso limite raccomandato e indice di sollevamento</title>
+<meta name="description" content="Calcola gratis il peso limite raccomandato (RWL) e l'indice di sollevamento (LI) con le costanti di peso per sesso ed età (25, 20, 15 kg) e le fasce di rischio. Nel browser, senza registrazione.">
+<link rel="canonical" href="https://www.newergo.it/calcolatore-niosh/"><meta name="robots" content="index,follow">
+<link rel="icon" href="/assets/brand/favicon-32.png">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="1ec0d027-be19-4d50-aca1-2958a1a28ffd" data-domains="www.newergo.it,newergo.it"></script>
+<meta property="og:type" content="website"><meta property="og:locale" content="it_IT"><meta property="og:site_name" content="NewErgo"><meta property="og:url" content="https://www.newergo.it/calcolatore-niosh/"><meta property="og:title" content="Calcolatore NIOSH: peso limite raccomandato e indice di sollevamento"><meta property="og:description" content="Peso limite raccomandato e indice di sollevamento con le costanti di peso per sesso ed età e le fasce di rischio. Gratis, nel browser, senza registrazione."><meta property="og:image" content="https://www.newergo.it/assets/brand/og-newergo.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","@id":"https://www.newergo.it/calcolatore-niosh/#app","name":"Calcolatore NIOSH","alternateName":"Calcolo del peso limite raccomandato e dell'indice di sollevamento","url":"https://www.newergo.it/calcolatore-niosh/","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"it","audience":{"@type":"Audience","audienceType":"RSPP, consulenti e studi HSE"},"description":"Equazione NIOSH per il sollevamento manuale di carichi: peso limite raccomandato, indice di sollevamento, moltiplicatori e fascia di rischio.","publisher":{"@id":"https://www.newergo.it/#org"},"isPartOf":{"@id":"https://www.newergo.it/strumenti/#page"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"NewErgo","item":"https://www.newergo.it/"},{"@type":"ListItem","position":2,"name":"Strumenti","item":"https://www.newergo.it/strumenti/"},{"@type":"ListItem","position":3,"name":"Calcolatore NIOSH","item":"https://www.newergo.it/calcolatore-niosh/"}]}]}</script>
+<meta name="theme-color" content="#14355a">
+<style>
+@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format("woff2")}
+:root{--navy:#14355a;--ice:#f0f7ff;--aqua:#2dc98a;--line:#c9d8e7;--muted:#536b83;--okbg:#e4f7ee;--oktx:#146b48;--badbg:#fdeaea;--badtx:#9b2626}
+*{box-sizing:border-box}body{margin:0;font:17px/1.6 Inter,system-ui,sans-serif;color:var(--navy);background:white}
+h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.12;letter-spacing:-.03em}a{color:inherit}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}.nav{background:var(--navy);color:white;position:sticky;top:0;z-index:20}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px}.brand{display:flex;gap:10px;align-items:center;font-weight:700;font-size:21px;text-decoration:none}.brand img{width:28px;height:28px;border-radius:6px}
+.nav nav{display:flex;gap:22px;font-size:14px;align-items:center}.nav nav a{text-decoration:none}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 25px;border-radius:999px;text-decoration:none;background:var(--navy);color:white;border:0;font:inherit;font-weight:700;cursor:pointer}.button.light{background:white;color:var(--navy)}.button.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.hero{position:relative;isolation:isolate;background:var(--navy);color:white;overflow:hidden;padding:96px 0 88px;min-height:520px;display:flex;align-items:center}.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2}.hero:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,23,41,.97) 0%,rgba(6,23,41,.90) 34%,rgba(6,23,41,.62) 50%,rgba(6,23,41,.15) 68%,rgba(6,23,41,0) 78%)}.hero .wrap{width:100%}.hero-credit{position:absolute;left:24px;bottom:12px;font-size:11px;color:#b9cde0;max-width:none}.eyebrow{font-size:14px;font-weight:500;margin-bottom:14px;color:#cfe0f0}
+.hero h1{font-size:clamp(38px,5.4vw,66px);font-weight:700;max-width:16ch}.hero h1 em{font-style:normal;color:var(--aqua)}.hero .intro{font-size:20px;line-height:1.5;max-width:52ch;margin-top:24px;color:#e4edf6}
+main{padding:40px 0 8px}.col{max-width:820px;margin:auto;padding:0 24px}
+.sec{background:var(--ice);border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin:0 0 22px}
+.sec h2{font-size:22px;font-weight:700;margin:0 0 6px}.lead{color:var(--muted);font-size:15px;margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+label{display:block;font-size:14px;color:var(--muted)}label .h{display:block;font-size:12.5px;margin-top:3px}
+input,select{width:100%;margin-top:5px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--navy);font:inherit;font-size:16px}
+input:focus,select:focus{outline:2px solid var(--aqua);outline-offset:1px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--navy)}.chk input{width:auto;margin-top:5px}
+.small{font-size:13.5px;color:var(--muted)}
+.result{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:4px}
+.score{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px}.score b{font-size:48px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.band{display:inline-block;padding:5px 12px;border-radius:999px;font-size:14.5px;font-weight:700}
+.b-verde{background:#e4f7ee;color:#146b48}.b-giallo{background:#fff4cc;color:#6d5200}.b-arancio{background:#ffe6cf;color:#874000}.b-rossochiaro{background:#fde0e0;color:#9b2626}.b-rosso{background:#f6c3c3;color:#7a1414}.b-viola{background:#ebdcf6;color:#5a2984}.b-nd{background:#eef2f6;color:var(--muted)}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.m{background:var(--ice);border:1px solid var(--line);border-radius:12px;padding:10px 14px}.m small{display:block;font-size:12.5px;color:var(--muted)}.m b{font-weight:700;font-size:22px}
+#verdict{margin:16px 0 0;font-size:15.5px}
+table.mt{width:100%;border-collapse:collapse;margin-top:16px;font-size:14.5px}.mt th,.mt td{text-align:left;padding:7px 8px;border-top:1px solid var(--line)}.mt th{font-size:12.5px;color:var(--muted);font-weight:500}.mt td.n{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}.mt tr.worst td{background:#fff4cc}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.legend .band{font-size:12px;font-weight:500;padding:3px 9px}
+.exits{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:8px}
+.exit{background:white;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.exit h3{font-size:17px;font-weight:700}.exit p{font-size:14.5px;color:var(--muted);flex:1}.exit .button{min-height:44px;padding:10px 18px;font-size:15px}
+.txt h2{font-size:24px;font-weight:700;margin:34px 0 12px}.txt p{margin:0 0 14px}.txt ul{margin:0 0 14px;padding-left:20px}.txt li{margin:0 0 6px}
+.fonti{font-size:14.5px;color:var(--muted)}
+.closing{padding:72px 24px;text-align:center;background:var(--navy);color:white;margin-top:56px}.closing h2{font-size:clamp(28px,4vw,42px);margin:0 auto 16px;max-width:22ch}.closing p{margin:0 auto 26px;max-width:52ch;color:#e4edf6}
+footer{padding:28px 0;font-size:12px;color:var(--muted)}
+.printhead{display:none;margin:0 0 16px}
+@media(max-width:640px){.nav nav a:not(.button){display:none}.hero{padding:56px 0 64px;min-height:0}.hero:after{background:linear-gradient(180deg,rgba(6,23,41,.92) 0%,rgba(6,23,41,.80) 60%,rgba(6,23,41,.55) 100%)}.sec{padding:20px 18px}.score b{font-size:40px}}
+@media print{.nav,.hero,.closing,footer,#exits,.txt,.noprint{display:none!important}body{font-size:13px}.sec{border:1px solid #999;background:white;break-inside:avoid}main{padding:0}.printhead{display:block!important}}
+</style></head><body>
+<header class="nav"><div class="wrap"><a class="brand" href="/"><img src="/assets/brand/newergo-mark-64.png" alt="" width="28" height="28">NewErgo</a><nav aria-label="Navigazione"><a href="/strumenti/">Strumenti</a><a href="/niosh/">Guida NIOSH</a><a class="button light" data-umami-event="calc-niosh-demo" href="https://www.newergo.it/?utm_source=sito&utm_medium=calcolatore_niosh&utm_campaign=demo#contatti">Prenota una demo</a></nav></div></header>
+
+<section class="hero"><img class="hero-bg" src="/assets/images/niosh-hero-1344.jpg" srcset="/assets/images/niosh-hero-800.jpg 800w, /assets/images/niosh-hero-1344.jpg 1344w" sizes="100vw" width="1344" height="752" alt="Lavoratore solleva una scatola da un bancale con entrambe le mani: un compito di sollevamento manuale valutato con l&#x27;equazione NIOSH" fetchpriority="high"><div class="wrap"><p class="eyebrow">Calcolatore gratuito · Sollevamento manuale · UNI ISO 11228-1</p><h1>Calcolatore NIOSH: <em>indice di sollevamento</em></h1><p class="intro">Inserisci le misure del sollevamento: ottieni il peso limite raccomandato, l'indice di sollevamento, la fascia di rischio e il fattore che pesa di più. Senza registrarti: il calcolo avviene nel tuo browser e i dati non lasciano il tuo computer.</p></div><p class="hero-credit">Immagine editoriale generata con strumenti di intelligenza artificiale · Postazione di esempio.</p></section>
+
+<main><div class="col">
+<p class="printhead"><strong>NewErgo · Calcolatore NIOSH</strong> · www.newergo.it/calcolatore-niosh · calcolo del <span id="pdate"></span></p>
+
+<section class="sec" aria-labelledby="h-in">
+  <h2 id="h-in">1 · Il compito di sollevamento</h2>
+  <p class="lead">Un compito per volta, sollevamento a due mani. I campi contengono un esempio: sostituiscilo con le tue misure, il risultato si aggiorna mentre scrivi.</p>
+  <div class="grid">
+    <label>Chi solleva (costante di peso)<select id="cp">
+      <option value="m">Uomini 20–45 anni · 25 kg</option>
+      <option value="f">Donne 20–45 anni · 20 kg</option>
+      <option value="m2">Uomini sotto 20 o oltre 45 anni · 20 kg</option>
+      <option value="f2">Donne sotto 20 o oltre 45 anni · 15 kg</option>
+      <option value="niosh">NIOSH originale · 23 kg</option></select></label>
+    <label>Peso sollevato (kg)<input id="peso" type="number" inputmode="decimal" min="0" step="0.1" value="12"><span class="h">Oggetto con il contenitore</span></label>
+    <label>Altezza delle mani da terra (cm)<input id="v" type="number" inputmode="decimal" min="0" value="30"><span class="h">All'inizio (o alla fine) del sollevamento</span></label>
+    <label>Dislocazione verticale (cm)<input id="d" type="number" inputmode="decimal" min="0" value="60"><span class="h">Differenza di altezza tra inizio e fine</span></label>
+    <label>Distanza orizzontale (cm)<input id="h" type="number" inputmode="decimal" min="0" value="40"><span class="h">Dal punto medio delle caviglie al centro della presa</span></label>
+    <label>Dislocazione angolare (°)<input id="a" type="number" inputmode="decimal" min="0" max="180" value="30"><span class="h">Asimmetria del carico rispetto al piano sagittale</span></label>
+    <label>Giudizio sulla presa<select id="cm"><option value="1">Buona</option><option value="0.95" selected>Discreta</option><option value="0.9">Scarsa</option></select></label>
+    <label>Frequenza (sollevamenti al minuto)<input id="f" type="number" inputmode="decimal" min="0" step="0.1" value="2"><span class="h">Media su 15 minuti</span></label>
+    <label>Durata del lavoro di sollevamento<select id="dur"><option value="breve">Breve · fino a 1 ora</option><option value="media">Media · da 1 a 2 ore</option><option value="lunga" selected>Lunga · da 2 a 8 ore</option></select></label>
+    <label>Minuti di movimentazione nel turno<select id="et"><option value="1">Fino a 480</option><option value="0.97">481–540</option><option value="0.93">541–600</option><option value="0.89">601–660</option><option value="0.85">Oltre 660</option></select></label>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:16px">
+    <label class="chk"><input id="om" type="checkbox"><span>Solleva con un solo arto</span></label>
+    <label class="chk"><input id="pm" type="checkbox"><span>Sollevano in due operatori</span></label>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-out">
+  <h2 id="h-out">2 · Risultato</h2>
+  <div class="result" aria-live="polite">
+    <div class="score"><div><small class="small">Indice di sollevamento (LI)</small><br><b id="li">—</b></div><span class="band b-nd" id="band">—</span></div>
+    <div class="res">
+      <div class="m"><small>Peso limite raccomandato</small><b id="rwl">—</b></div>
+      <div class="m"><small>Peso sollevato</small><b id="pz">—</b></div>
+      <div class="m"><small>Fattore che pesa di più</small><b id="wf" style="font-size:17px">—</b></div>
+    </div>
+    <p id="verdict"></p>
+    <table class="mt"><thead><tr><th>Fattore</th><th>Valore inserito</th><th style="text-align:right">Moltiplicatore</th></tr></thead><tbody id="tb"></tbody></table>
+    <div class="legend"><span class="band b-verde">≤ 0,85 accettabile</span><span class="band b-giallo">0,86–1 borderline</span><span class="band b-arancio">1–1,5 basso</span><span class="band b-rossochiaro">1,5–2 moderato</span><span class="band b-rosso">2–3 alto</span><span class="band b-viola">oltre 3 molto alto</span></div>
+  </div>
+</section>
+
+<section class="sec" id="exits" aria-labelledby="h-ex">
+  <h2 id="h-ex">3 · Cosa puoi farne</h2>
+  <div class="exits">
+    <div class="exit"><h3>Tieni il calcolo</h3><p>Stampa o salva in PDF questa pagina con i tuoi valori, i moltiplicatori e la fascia di rischio.</p><button class="button ghost" id="print" type="button">Salva in PDF</button></div>
+    <div class="exit"><h3>Parti dal video della postazione</h3><p>NewErgo Assessment conta le azioni dal video e compila OCRA, REBA e NIOSH; il tecnico verifica e firma. Prenota mezz'ora: ti mostriamo il flusso su una mansione che ti interessa.</p><a class="button" id="x-demo" href="https://www.newergo.it/?utm_source=sito&utm_medium=calcolatore_niosh&utm_campaign=demo#contatti">Prenota una demo</a></div>
+  </div>
+</section>
+
+<section class="txt" aria-labelledby="h-come">
+  <h2 id="h-come">Come calcola</h2>
+  <p>Peso limite raccomandato = CP × HM × VM × DM × AM × FM × CM, per gli eventuali moltiplicatori aggiuntivi. L'indice di sollevamento è il peso sollevato diviso il peso limite.</p>
+  <ul>
+    <li><strong>Distanza orizzontale, altezza, dislocazione e asimmetria:</strong> formule del manuale NIOSH (HM = 25/H, VM = 1 − 0,003·|V − 75|, DM = 0,82 + 4,5/D, AM = 1 − 0,0032·A). Fuori campo il moltiplicatore vale 0: distanza oltre 63 cm, altezza oltre 175 cm, dislocazione oltre 175 cm, asimmetria oltre 135°.</li>
+    <li><strong>Costanti di peso per sesso ed età, frequenza, presa e moltiplicatori aggiuntivi</strong> (un solo arto 0,6; due operatori 0,85; turni oltre 480 minuti da 0,97 a 0,85): sono i valori usati nei fogli di calcolo EPM; tra le righe della tabella di frequenza il calcolatore interpola.</li>
+    <li><strong>Fasce di rischio:</strong> le sei fasce dell'indice di sollevamento usate nei fogli EPM.</li>
+    <li><strong>Verifica:</strong> i moltiplicatori coincidono con i valori tabellati dello strumento NIOSH di EPM entro 0,01.</li>
+  </ul>
+  <p>Vale per un compito singolo. Per compiti con più sollevamenti diversi servono gli indici composti (CLI, VLI). Quando l'equazione non si applica (una mano sola per tutto il turno, da seduti, oggetti instabili, trasporto, spinta e traino) lo trovi nella <a href="/niosh/">guida all'equazione NIOSH</a>. Lo strumento aiuta il calcolo: la valutazione e la firma restano al tecnico.</p>
+  <h2 id="h-fonti">Fonti</h2>
+  <ul class="fonti">
+    <li>Waters T.R., Putz-Anderson V., Garg A. (1994), <em>Applications Manual for the Revised NIOSH Lifting Equation</em>, NIOSH/CDC.</li>
+    <li>UNI ISO 11228-1, sollevamento, abbassamento e trasporto manuale; D.Lgs. 81/2008, Titolo VI e Allegato XXXIII.</li>
+    <li>Waters T.R., Putz-Anderson V., Garg A., Fine L.J. (1993), Revised NIOSH equation for the design and evaluation of manual lifting tasks, <em>Ergonomics</em> 36(7), 749–776.</li>
+    <li>Risultati confrontati con lo strumento <em>ERGOepm Simple NIOSH Tool</em> (versione del 18/05/2023) e con il foglio NIOSH CLI/VLI di EPM International Ergonomics School, epmresearch.org.</li>
+  </ul>
+  <p class="small">Altri calcolatori: <a href="/calcolatore-checklist-ocra/">Checklist OCRA</a> · <a href="/calcolatore-snook-ciriello/">Snook e Ciriello</a> · <a href="/strumenti/">tutti gli strumenti</a></p>
+</section>
+</div>
+
+<section class="closing"><h2>Il calcolo è la parte facile. Le misure no.</h2><p>Distanze, altezze e frequenze vanno rilevate sul compito reale. Guarda come NewErgo Assessment parte dal video della postazione, su una mansione che scegli tu.</p><a class="button light" data-umami-event="calc-niosh-demo" href="https://www.newergo.it/?utm_source=sito&utm_medium=calcolatore_niosh&utm_campaign=demo#contatti">Prenota una demo</a></section></main>
+<footer><div class="wrap">© NewErgo · <a href="/privacy.html">Privacy</a> · <a href="/strumenti/">Strumenti</a> · <a href="https://www.linkedin.com/company/newergo/">LinkedIn</a></div></footer>
+
+<script>
+/*CALC-START*/
+var NIOSH={
+  CP:{m:25,f:20,m2:20,f2:15,niosh:23},
+  FR:[0.2,0.5,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+  FT:{lunga:[.85,.81,.75,.65,.55,.45,.35,.27,.22,.18,0,0,0,0,0,0,0],
+      media:[.95,.92,.88,.84,.79,.72,.60,.50,.42,.35,.30,.26,0,0,0,0,0],
+      breve:[1,.97,.94,.91,.88,.84,.80,.75,.70,.60,.52,.45,.41,.37,0,0,0]},
+  hm:function(h){return h<=25?1:(h>63?0:25/h)},
+  vm:function(v){return v>175?0:1-0.003*Math.abs(v-75)},
+  dm:function(d){return d<=25?1:(d>175?0:0.82+4.5/d)},
+  am:function(a){return a>135?0:1-0.0032*a},
+  fm:function(f,dur){var r=this.FR,t=this.FT[dur];if(f<0.1)return 1;if(f<=r[0])return t[0];if(f>r[r.length-1])return 0;
+    for(var i=1;i<r.length;i++){if(f<=r[i]){var k=(f-r[i-1])/(r[i]-r[i-1]);return t[i-1]+k*(t[i]-t[i-1])}}return 0},
+  band:function(li){if(li===null)return null;
+    if(li<=0.85)return{k:"verde",t:"Accettabile"};if(li<=1)return{k:"giallo",t:"Borderline"};if(li<=1.5)return{k:"arancio",t:"Rischio basso"};
+    if(li<=2)return{k:"rossochiaro",t:"Rischio moderato"};if(li<=3)return{k:"rosso",t:"Rischio alto"};return{k:"viola",t:"Rischio molto alto"}},
+  calc:function(x){
+    var M={CP:this.CP[x.cp],HM:this.hm(x.h),VM:this.vm(x.v),DM:this.dm(x.d),AM:this.am(x.a),FM:this.fm(x.f,x.dur),CM:x.cm,EtM:x.et,OM:x.om?0.6:1,PM:x.pm?0.85:1};
+    var rwl=M.CP*M.HM*M.VM*M.DM*M.AM*M.FM*M.CM*M.EtM*M.OM*M.PM;
+    var li=rwl>0?x.peso/rwl:null;
+    var w=null;["HM","VM","DM","AM","FM","CM"].forEach(function(k){if(w===null||M[k]<M[w])w=k});
+    return{M:M,rwl:rwl,li:li,band:this.band(li),worst:w}
+  }
+};
+/*CALC-END*/
+function $(i){return document.getElementById(i)}
+function num(i){var v=parseFloat(String($(i).value).replace(",","."));return isNaN(v)?null:v}
+function f2(n){return n.toLocaleString("it-IT",{minimumFractionDigits:2,maximumFractionDigits:2})}
+function f1(n){return n.toLocaleString("it-IT",{maximumFractionDigits:1})}
+function track(n,d){try{if(window.umami){d?window.umami.track(n,d):window.umami.track(n)}}catch(e){}}
+var NAMES={HM:"Distanza orizzontale",VM:"Altezza delle mani",DM:"Dislocazione verticale",AM:"Dislocazione angolare",FM:"Frequenza e durata",CM:"Presa"};
+var ADVICE={HM:"avvicinare il carico al corpo",VM:"portare la presa vicino a 75 cm da terra",DM:"ridurre il dislivello tra partenza e arrivo",AM:"eliminare la torsione: carico davanti al lavoratore",FM:"ridurre la frequenza o alternare con compiti senza sollevamento",CM:"migliorare la presa (maniglie, contenitori)"};
+var started=false;
+function calc(){
+  var x={cp:$("cp").value,peso:num("peso"),v:num("v"),d:num("d"),h:num("h"),a:num("a"),cm:parseFloat($("cm").value),f:num("f"),dur:$("dur").value,et:parseFloat($("et").value),om:$("om").checked,pm:$("pm").checked};
+  var miss=["peso","v","d","h","a","f"].filter(function(k){return x[k]===null||x[k]<0});
+  var bd=$("band"),tb=$("tb");
+  if(miss.length){$("li").textContent="—";bd.className="band b-nd";bd.textContent="Completa i campi";$("rwl").textContent="—";$("pz").textContent="—";$("wf").textContent="—";$("verdict").textContent="";tb.innerHTML="";return}
+  var r=NIOSH.calc(x);
+  $("rwl").textContent=f1(r.rwl)+" kg";$("pz").textContent=f1(x.peso)+" kg";
+  if(r.li===null){$("li").textContent="n.c.";bd.className="band b-viola";bd.textContent="Fattore fuori campo";
+    $("verdict").textContent="Almeno un moltiplicatore vale 0: il compito è fuori dai limiti dell'equazione (per esempio distanza oltre 63 cm, altezza o dislocazione oltre 175 cm, frequenza troppo alta per la durata). Va riprogettato.";}
+  else{$("li").textContent=f2(r.li);bd.className="band b-"+r.band.k;bd.textContent=r.band.t;
+    $("verdict").textContent=r.li<=0.85?"Il peso sollevato rientra nel limite raccomandato per questa popolazione.":"Il fattore che pesa di più è "+NAMES[r.worst].toLowerCase()+": la prima leva è "+ADVICE[r.worst]+". Prova a cambiare il valore e guarda come scende l'indice.";}
+  $("wf").textContent=NAMES[r.worst]+" ("+f2(r.M[r.worst])+")";
+  var durTxt={breve:"breve",media:"media",lunga:"lunga"}[x.dur];
+  var rows=[["CP","Costante di peso",$("cp").selectedOptions[0].text],["HM",NAMES.HM,f1(x.h)+" cm"],["VM",NAMES.VM,f1(x.v)+" cm"],["DM",NAMES.DM,f1(x.d)+" cm"],["AM",NAMES.AM,f1(x.a)+"°"],["FM",NAMES.FM,f1(x.f)+"/min, durata "+durTxt],["CM",NAMES.CM,$("cm").selectedOptions[0].text]];
+  if(x.et<1)rows.push(["EtM","Turno oltre 480 minuti",$("et").selectedOptions[0].text+" min"]);
+  if(x.om)rows.push(["OM","Un solo arto","sì"]);if(x.pm)rows.push(["PM","Due operatori","sì"]);
+  tb.innerHTML=rows.map(function(q){var v=q[0]==="CP"?r.M.CP+" kg":f2(r.M[q[0]]);return'<tr'+(q[0]===r.worst?' class="worst"':'')+'><td>'+q[1]+'</td><td>'+q[2]+'</td><td class="n">'+v+'</td></tr>'}).join("");
+}
+document.querySelectorAll("input,select").forEach(function(e){e.addEventListener("input",function(){calc();if(!started){started=true;track("calc-niosh-calcolo")}});e.addEventListener("change",calc)});
+$("pdate").textContent=new Date().toLocaleDateString("it-IT");
+$("print").addEventListener("click",function(){track("calc-niosh-stampa");window.print()});
+$("x-demo").addEventListener("click",function(){track("calc-niosh-demo")});
+calc();
+window.addEventListener("load",function(){track("calc-niosh-apertura")});
+</script>
+</body></html>

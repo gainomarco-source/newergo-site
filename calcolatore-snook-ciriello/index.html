@@ -1,0 +1,176 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calcolatore Snook e Ciriello online: spinta e traino, forze limite e indice</title>
+<meta name="description" content="Calcola gratis le forze limite di spinta e traino dalle tabelle di Snook e Ciriello (UNI ISO 11228-2, metodo 1) e l'indice di rischio per fase iniziale e di mantenimento, uomini e donne. Nel browser, senza registrazione.">
+<link rel="canonical" href="https://www.newergo.it/calcolatore-snook-ciriello/"><meta name="robots" content="index,follow">
+<link rel="icon" href="/assets/brand/favicon-32.png">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="1ec0d027-be19-4d50-aca1-2958a1a28ffd" data-domains="www.newergo.it,newergo.it"></script>
+<meta property="og:type" content="website"><meta property="og:locale" content="it_IT"><meta property="og:site_name" content="NewErgo"><meta property="og:url" content="https://www.newergo.it/calcolatore-snook-ciriello/"><meta property="og:title" content="Calcolatore Snook e Ciriello: spinta e traino"><meta property="og:description" content="Forze limite di spinta e traino dalle tabelle di Snook e Ciriello e indice di rischio per fase iniziale e di mantenimento. Gratis, nel browser."><meta property="og:image" content="https://www.newergo.it/assets/brand/og-newergo.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","@id":"https://www.newergo.it/calcolatore-snook-ciriello/#app","name":"Calcolatore Snook e Ciriello","alternateName":"Calcolo delle forze limite di spinta e traino","url":"https://www.newergo.it/calcolatore-snook-ciriello/","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"it","audience":{"@type":"Audience","audienceType":"RSPP, consulenti e studi HSE"},"description":"Tabelle di Snook e Ciriello per spinta e traino: forza limite e indice di rischio per fase iniziale e di mantenimento, uomini e donne.","publisher":{"@id":"https://www.newergo.it/#org"},"isPartOf":{"@id":"https://www.newergo.it/strumenti/#page"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"NewErgo","item":"https://www.newergo.it/"},{"@type":"ListItem","position":2,"name":"Strumenti","item":"https://www.newergo.it/strumenti/"},{"@type":"ListItem","position":3,"name":"Calcolatore Snook e Ciriello","item":"https://www.newergo.it/calcolatore-snook-ciriello/"}]}]}</script>
+<meta name="theme-color" content="#14355a">
+<style>
+@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format("woff2")}
+:root{--navy:#14355a;--ice:#f0f7ff;--aqua:#2dc98a;--line:#c9d8e7;--muted:#536b83;--okbg:#e4f7ee;--oktx:#146b48;--badbg:#fdeaea;--badtx:#9b2626}
+*{box-sizing:border-box}body{margin:0;font:17px/1.6 Inter,system-ui,sans-serif;color:var(--navy);background:white}
+h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.12;letter-spacing:-.03em}a{color:inherit}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}.nav{background:var(--navy);color:white;position:sticky;top:0;z-index:20}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px}.brand{display:flex;gap:10px;align-items:center;font-weight:700;font-size:21px;text-decoration:none}.brand img{width:28px;height:28px;border-radius:6px}
+.nav nav{display:flex;gap:22px;font-size:14px;align-items:center}.nav nav a{text-decoration:none}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 25px;border-radius:999px;text-decoration:none;background:var(--navy);color:white;border:0;font:inherit;font-weight:700;cursor:pointer}.button.light{background:white;color:var(--navy)}.button.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.hero{position:relative;isolation:isolate;background:var(--navy);color:white;overflow:hidden;padding:96px 0 88px;min-height:520px;display:flex;align-items:center}.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2}.hero:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,23,41,.97) 0%,rgba(6,23,41,.90) 34%,rgba(6,23,41,.62) 50%,rgba(6,23,41,.15) 68%,rgba(6,23,41,0) 78%)}.hero .wrap{width:100%}.hero-credit{position:absolute;left:24px;bottom:12px;font-size:11px;color:#b9cde0;max-width:none}.eyebrow{font-size:14px;font-weight:500;margin-bottom:14px;color:#cfe0f0}
+.hero h1{font-size:clamp(38px,5.4vw,66px);font-weight:700;max-width:16ch}.hero h1 em{font-style:normal;color:var(--aqua)}.hero .intro{font-size:20px;line-height:1.5;max-width:52ch;margin-top:24px;color:#e4edf6}
+main{padding:40px 0 8px}.col{max-width:820px;margin:auto;padding:0 24px}
+.sec{background:var(--ice);border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin:0 0 22px}
+.sec h2{font-size:22px;font-weight:700;margin:0 0 6px}.lead{color:var(--muted);font-size:15px;margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+label{display:block;font-size:14px;color:var(--muted)}label .h{display:block;font-size:12.5px;margin-top:3px}
+input,select{width:100%;margin-top:5px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--navy);font:inherit;font-size:16px}
+input:focus,select:focus{outline:2px solid var(--aqua);outline-offset:1px}
+.small{font-size:13.5px;color:var(--muted)}
+.result{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:4px}
+.score{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px}.score b{font-size:48px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.band{display:inline-block;padding:5px 12px;border-radius:999px;font-size:14.5px;font-weight:700}
+.b-verde{background:#e4f7ee;color:#146b48}.b-giallo{background:#fff4cc;color:#6d5200}.b-rosso{background:#f6c3c3;color:#7a1414}.b-nd{background:#eef2f6;color:var(--muted)}
+#verdict{margin:16px 0 0;font-size:15.5px}
+table.mt{width:100%;border-collapse:collapse;margin-top:16px;font-size:14.5px}.mt th,.mt td{text-align:left;padding:7px 8px;border-top:1px solid var(--line)}.mt th{font-size:12.5px;color:var(--muted);font-weight:500}.mt td.n{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}.mt th.n{text-align:right}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.legend .band{font-size:12px;font-weight:500;padding:3px 9px}
+.exits{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:8px}
+.exit{background:white;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px}
+.exit h3{font-size:17px;font-weight:700}.exit p{font-size:14.5px;color:var(--muted);flex:1}.exit .button{min-height:44px;padding:10px 18px;font-size:15px}
+.txt h2{font-size:24px;font-weight:700;margin:34px 0 12px}.txt p{margin:0 0 14px}.txt ul{margin:0 0 14px;padding-left:20px}.txt li{margin:0 0 6px}
+.fonti{font-size:14.5px;color:var(--muted)}
+.closing{padding:72px 24px;text-align:center;background:var(--navy);color:white;margin-top:56px}.closing h2{font-size:clamp(28px,4vw,42px);margin:0 auto 16px;max-width:22ch}.closing p{margin:0 auto 26px;max-width:52ch;color:#e4edf6}
+footer{padding:28px 0;font-size:12px;color:var(--muted)}
+.printhead{display:none;margin:0 0 16px}
+@media(max-width:640px){.nav nav a:not(.button){display:none}.hero{padding:56px 0 64px;min-height:0}.hero:after{background:linear-gradient(180deg,rgba(6,23,41,.92) 0%,rgba(6,23,41,.80) 60%,rgba(6,23,41,.55) 100%)}.sec{padding:20px 18px}.score b{font-size:40px}.mt{font-size:13.5px}}
+@media print{.nav,.hero,.closing,footer,#exits,.txt,.noprint{display:none!important}body{font-size:13px}.sec{border:1px solid #999;background:white;break-inside:avoid}main{padding:0}.printhead{display:block!important}}
+</style></head><body>
+<header class="nav"><div class="wrap"><a class="brand" href="/"><img src="/assets/brand/newergo-mark-64.png" alt="" width="28" height="28">NewErgo</a><nav aria-label="Navigazione"><a href="/strumenti/">Strumenti</a><a href="/snook-ciriello/">Guida Snook e Ciriello</a><a class="button light" data-umami-event="calc-snook-demo" href="https://www.newergo.it/?utm_source=sito&utm_medium=calcolatore_snook&utm_campaign=demo#contatti">Prenota una demo</a></nav></div></header>
+
+<section class="hero"><img class="hero-bg" src="/assets/images/snook-hero-1344.jpg" srcset="/assets/images/snook-hero-800.jpg 800w, /assets/images/snook-hero-1344.jpg 1344w" sizes="100vw" width="1344" height="752" alt="Lavoratore spinge un carrello carico lungo un corridoio di fabbrica: un compito di spinta e traino valutato con le tabelle Snook e Ciriello" fetchpriority="high"><div class="wrap"><p class="eyebrow">Calcolatore gratuito · Spinta e traino · UNI ISO 11228-2</p><h1>Calcolatore Snook e Ciriello: <em>spinta e traino</em></h1><p class="intro">Inserisci il percorso e le forze misurate con il dinamometro: ottieni la forza limite delle tabelle e l'indice di rischio, separati per fase iniziale e di mantenimento. Senza registrarti: il calcolo avviene nel tuo browser e i dati non lasciano il tuo computer.</p></div><p class="hero-credit">Immagine editoriale generata con strumenti di intelligenza artificiale · Postazione di esempio.</p></section>
+
+<main><div class="col">
+<p class="printhead"><strong>NewErgo · Calcolatore Snook e Ciriello</strong> · www.newergo.it/calcolatore-snook-ciriello · calcolo del <span id="pdate"></span></p>
+
+<section class="sec" aria-labelledby="h-in">
+  <h2 id="h-in">1 · Il compito di spinta o traino</h2>
+  <p class="lead">Un percorso per volta, con due mani. I campi contengono un esempio: sostituiscilo con i tuoi dati, il risultato si aggiorna mentre scrivi.</p>
+  <div class="grid">
+    <label>Azione<select id="az"><option value="push">Spinta</option><option value="pull">Traino</option></select></label>
+    <label>Chi la esegue<select id="sx"><option value="m">Uomini</option><option value="f">Donne</option><option value="x">Gruppo misto (fanno fede le donne)</option></select></label>
+    <label>Altezza delle mani da terra (cm)<input id="hh" type="number" inputmode="decimal" min="0" value="100"><span class="h">Dove le mani afferrano il carico o la maniglia</span></label>
+    <label>Distanza percorsa per ogni azione (m)<input id="dd" type="number" inputmode="decimal" min="0" step="0.5" value="15"><span class="h">Da 1 a 60 m</span></label>
+    <label>Azioni di spinta o traino nel turno<input id="na" type="number" inputmode="decimal" min="0" value="120"></label>
+    <label>Durata netta di spinta e traino (min)<input id="mn" type="number" inputmode="decimal" min="0" value="240"><span class="h">Minuti del turno dedicati a questo compito</span></label>
+    <label>Forza iniziale misurata (kgf)<input id="fi" type="number" inputmode="decimal" min="0" step="0.1" value="22"><span class="h">Picco per vincere l'inerzia</span></label>
+    <label>Forza di mantenimento misurata (kgf)<input id="fs" type="number" inputmode="decimal" min="0" step="0.1" value="14"><span class="h">Media durante il movimento</span></label>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-out">
+  <h2 id="h-out">2 · Risultato</h2>
+  <div class="result" aria-live="polite">
+    <div class="score"><div><small class="small">Indice di rischio più alto</small><br><b id="ir">—</b></div><span class="band b-nd" id="band">—</span></div>
+    <p id="verdict"></p>
+    <table class="mt"><thead><tr><th>Fase</th><th class="n">Forza misurata</th><th class="n">Forza limite</th><th class="n">Indice</th></tr></thead><tbody id="tb"></tbody></table>
+    <p class="small" id="used" style="margin-top:12px"></p>
+    <div class="legend"><span class="band b-verde">≤ 0,85 accettabile</span><span class="band b-giallo">0,86–1 borderline</span><span class="band b-rosso">oltre 1 rischio presente</span></div>
+  </div>
+</section>
+
+<section class="sec" id="exits" aria-labelledby="h-ex">
+  <h2 id="h-ex">3 · Cosa puoi farne</h2>
+  <div class="exits">
+    <div class="exit"><h3>Tieni il calcolo</h3><p>Stampa o salva in PDF questa pagina con i tuoi valori, le forze limite e gli indici.</p><button class="button ghost" id="print" type="button">Salva in PDF</button></div>
+    <div class="exit"><h3>Una valutazione completa</h3><p>NewErgo Assessment confronta le forze misurate con le tabelle di riferimento, accanto a OCRA, REBA e NIOSH; il tecnico verifica e firma. Prenota mezz'ora: ti mostriamo il flusso su una mansione che ti interessa.</p><a class="button" id="x-demo" href="https://www.newergo.it/?utm_source=sito&utm_medium=calcolatore_snook&utm_campaign=demo#contatti">Prenota una demo</a></div>
+  </div>
+</section>
+
+<section class="txt" aria-labelledby="h-come">
+  <h2 id="h-come">Come calcola</h2>
+  <p>Per ogni fase l'indice è la forza misurata divisa la forza limite della tabella. Le tabelle sono quelle di Snook e Ciriello (1991) usate dal metodo 1 della UNI ISO 11228-2: sei distanze (2, 8, 15, 30, 45, 60 m), tre altezze delle mani per sesso e nove frequenze, da un'azione ogni 8 ore a 10 al minuto.</p>
+  <ul>
+    <li><strong>Frequenza:</strong> azioni nel turno divise per i minuti netti; si usa la colonna della tabella con la frequenza uguale o superiore.</li>
+    <li><strong>Distanza:</strong> si usa la distanza di tabella uguale o superiore. <strong>Altezza:</strong> la riga più vicina (uomini 145, 95, 65 cm; donne 135, 90, 60 cm).</li>
+    <li><strong>Forze:</strong> le tabelle sono in newton; per il confronto con il dinamometro si usa 10 N = 1 kgf, come nei fogli EPM.</li>
+    <li><strong>Combinazioni non previste:</strong> le tabelle non danno un valore per percorsi lunghi a frequenza alta (per esempio 30 m a 4 azioni al minuto). In quel caso il calcolatore non dà un indice.</li>
+    <li><strong>Fasce:</strong> fino a 0,85 accettabile, da 0,86 a 1 borderline, oltre 1 rischio presente: le fasce usate nei fogli EPM.</li>
+    <li><strong>Verifica:</strong> limiti e indici coincidono con quelli del foglio PUSHPULL di EPM su tutte le combinazioni provate.</li>
+  </ul>
+  <p>Il calcolatore non sostituisce la misura: le forze vanno rilevate con il dinamometro sul percorso reale, ripetendo la prova (la norma suggerisce almeno quattro registrazioni). Se l'indice è oltre 1, o se le forze rientrano ma la check list del compito segnala fattori di rischio, serve il metodo 2 della norma. Errori frequenti e limiti del metodo sono nella <a href="/snook-ciriello/">guida alle tabelle di Snook e Ciriello</a>. La valutazione e la firma restano al tecnico.</p>
+  <h2 id="h-fonti">Fonti</h2>
+  <ul class="fonti">
+    <li>Snook S.H., Ciriello V.M. (1991), The design of manual handling tasks: revised tables of maximum acceptable weights and forces, <em>Ergonomics</em> 34(9), 1197–1213.</li>
+    <li>UNI ISO 11228-2:2009, Ergonomia – Movimentazione manuale – Spinta e traino; D.Lgs. 81/2008, Titolo VI e Allegato XXXIII.</li>
+    <li>Risultati confrontati con il foglio PUSHPULL (versione del 15/03/2023) di EPM International Ergonomics School, epmresearch.org.</li>
+  </ul>
+  <p class="small">Altri calcolatori: <a href="/calcolatore-niosh/">NIOSH</a> · <a href="/calcolatore-checklist-ocra/">Checklist OCRA</a> · <a href="/strumenti/">tutti gli strumenti</a></p>
+</section>
+</div>
+
+<section class="closing"><h2>Il calcolo è la parte facile. Le misure no.</h2><p>Forze, percorsi e frequenze vanno rilevati sul compito reale. Guarda come NewErgo Assessment entra nella tua valutazione, su una mansione che scegli tu.</p><a class="button light" data-umami-event="calc-snook-demo" href="https://www.newergo.it/?utm_source=sito&utm_medium=calcolatore_snook&utm_campaign=demo#contatti">Prenota una demo</a></section></main>
+<footer><div class="wrap">© NewErgo · <a href="/privacy.html">Privacy</a> · <a href="/strumenti/">Strumenti</a> · <a href="https://www.linkedin.com/company/newergo/">LinkedIn</a></div></footer>
+
+<script>
+/*CALC-START*/
+var SNOOK={
+  /* Forze limite in newton, dal foglio EPM PUSHPULL, foglio CalcoliM1&2 (C116:V211).
+     Righe: 6 distanze (2, 8, 15, 30, 45, 60 m) x 3 altezze (alta, media, bassa).
+     Colonne: 9 frequenze (10/min, 5/min, 4/min, 2,5/min, 1/min, 1/2 min, 1/5 min, 1/30 min, 1/8 h) x uomini, donne. */
+  T:{"pushI":[[200,140,220,150,220,150,220,150,250,170,250,180,260,200,260,210,310,220],[210,140,240,150,240,150,240,150,260,170,260,180,280,200,280,210,340,220],[190,110,220,120,220,120,220,120,240,140,240,140,250,160,260,170,310,180],[null,null,null,null,140,150,160,160,210,160,210,160,220,180,220,190,260,200],[null,null,null,null,160,140,180,150,230,160,230,170,250,190,250,190,300,210],[null,null,null,null,130,110,140,120,200,140,200,140,210,160,210,160,260,170],[null,null,null,null,null,null,160,120,190,140,190,140,200,150,210,160,250,170],[null,null,null,null,null,null,180,110,220,140,220,140,230,160,240,160,280,170],[null,null,null,null,null,null,150,90,190,120,190,120,200,130,200,140,240,150],[null,null,null,null,null,null,null,null,150,120,160,130,190,140,190,150,240,170],[null,null,null,null,null,null,null,null,170,120,190,140,220,150,220,160,270,180],[null,null,null,null,null,null,null,null,140,110,160,120,190,120,190,130,230,150],[null,null,null,null,null,null,null,null,130,120,140,130,160,140,160,150,200,170],[null,null,null,null,null,null,null,null,140,120,160,140,190,150,190,160,230,180],[null,null,null,null,null,null,null,null,120,110,140,120,160,120,160,130,200,150],[null,null,null,null,null,null,null,null,null,null,120,120,140,130,140,140,180,150],[null,null,null,null,null,null,null,null,null,null,140,120,160,130,160,140,200,160],[null,null,null,null,null,null,null,null,null,null,120,100,140,110,140,120,170,130]],"pushS":[[100,60,130,80,130,80,130,80,150,100,160,100,180,110,180,120,220,140],[100,60,130,70,130,70,130,70,160,90,170,90,190,100,190,110,230,130],[100,50,130,60,130,60,130,60,160,80,160,80,180,90,190,90,230,120],[null,null,null,null,80,60,90,70,130,70,130,70,150,80,160,90,180,110],[null,null,null,null,80,60,100,70,130,80,130,80,150,90,150,90,180,110],[null,null,null,null,80,60,100,70,120,70,130,70,140,80,150,90,180,110],[null,null,null,null,null,null,60,40,110,60,120,60,130,70,140,70,160,90],[null,null,null,null,null,null,60,40,110,60,120,70,130,70,130,80,160,100],[null,null,null,null,null,null,60,40,110,60,110,60,120,70,130,70,150,90],[null,null,null,null,null,null,null,null,80,50,100,60,120,60,130,60,160,80],[null,null,null,null,null,null,null,null,80,50,100,60,120,60,130,70,160,90],[null,null,null,null,null,null,null,null,80,50,90,60,110,60,130,60,150,80],[null,null,null,null,null,null,null,null,70,50,80,50,100,50,110,60,130,80],[null,null,null,null,null,null,null,null,70,50,80,60,90,60,110,60,130,80],[null,null,null,null,null,null,null,null,70,50,80,50,90,50,110,60,130,70],[null,null,null,null,null,null,null,null,null,null,70,30,80,40,90,40,110,60],[null,null,null,null,null,null,null,null,null,null,70,30,80,40,90,50,110,60],[null,null,null,null,null,null,null,null,null,null,70,30,80,40,90,40,100,60]],"pullI":[[140,130,160,160,160,160,160,160,180,170,180,180,190,190,190,210,230,220],[190,140,220,160,220,160,220,160,250,180,250,190,270,210,270,220,320,230],[220,150,250,170,250,170,250,170,280,190,280,200,300,220,300,230,360,240],[null,null,null,null,110,130,130,140,160,160,160,160,170,170,180,190,210,200],[null,null,null,null,150,140,180,150,230,160,230,170,240,190,240,200,290,210],[null,null,null,null,180,150,200,160,260,170,260,180,270,200,280,210,330,220],[null,null,null,null,null,null,130,100,150,130,150,140,160,150,170,160,200,170],[null,null,null,null,null,null,180,100,210,140,210,140,230,160,230,170,280,180],[null,null,null,null,null,null,200,110,240,150,240,150,260,170,260,180,310,190],[null,null,null,null,null,null,null,null,120,120,130,130,150,140,150,150,190,170],[null,null,null,null,null,null,null,null,160,130,180,140,210,150,210,160,260,180],[null,null,null,null,null,null,null,null,180,130,210,140,240,150,240,170,300,190],[null,null,null,null,null,null,null,null,100,120,110,130,130,140,130,150,160,160],[null,null,null,null,null,null,null,null,140,130,160,140,180,150,180,160,230,180],[null,null,null,null,null,null,null,null,160,130,180,140,210,150,210,170,260,190],[null,null,null,null,null,null,null,null,null,null,100,100,110,110,110,140,140,140],[null,null,null,null,null,null,null,null,null,null,130,120,160,130,160,140,190,160],[null,null,null,null,null,null,null,null,null,null,150,130,180,140,180,150,220,170]],"pullS":[[80,60,100,90,100,90,100,90,120,100,130,100,150,110,150,120,180,150],[100,60,130,90,130,90,130,90,160,100,170,100,190,110,200,120,240,140],[110,50,140,80,140,80,140,80,170,90,180,90,200,100,210,110,250,130],[null,null,null,null,60,70,80,80,100,90,110,90,120,100,120,110,150,130],[null,null,null,null,80,70,100,80,130,90,140,90,160,100,160,100,190,130],[null,null,null,null,90,60,110,70,140,80,150,80,170,90,170,100,200,120],[null,null,null,null,null,null,60,40,90,70,90,80,100,80,110,90,130,110],[null,null,null,null,null,null,70,40,120,70,120,70,140,80,140,90,170,110],[null,null,null,null,null,null,70,40,120,70,130,70,150,70,150,80,180,100],[null,null,null,null,null,null,null,null,70,60,80,70,90,70,110,80,130,100],[null,null,null,null,null,null,null,null,90,60,100,70,120,70,140,70,170,100],[null,null,null,null,null,null,null,null,90,60,110,60,130,60,150,70,180,90],[null,null,null,null,null,null,null,null,60,60,70,60,80,70,90,70,100,90],[null,null,null,null,null,null,null,null,70,50,90,60,100,60,120,70,140,90],[null,null,null,null,null,null,null,null,80,50,90,60,110,60,120,60,150,80],[null,null,null,null,null,null,null,null,null,null,60,40,60,50,70,50,90,70],[null,null,null,null,null,null,null,null,null,null,70,40,90,50,100,50,120,70],[null,null,null,null,null,null,null,null,null,null,80,30,90,50,100,50,120,60]]},
+  DIST:[2.1,8.1,15.1,30.1,45.1],DLAB:[2,8,15,30,45,60],
+  FTH:[1/480,1/30,0.2,0.5,1,2.5,4,5],
+  FLAB:["10 al minuto","5 al minuto","4 al minuto","2,5 al minuto","1 al minuto","1 ogni 2 minuti","1 ogni 5 minuti","1 ogni 30 minuti","1 ogni 8 ore"],
+  HLAB:{m:[145,95,65],f:[135,90,60]},
+  block:function(d){if(d<1||d>=61)return null;var b=0;this.DIST.forEach(function(t){if(d>=t)b++});return b},
+  hrow:function(sex,h){return sex==="m"?(h>=119.5?0:(h>=79.5?1:2)):(h>=112?0:(h>=73?1:2))},
+  fcol:function(fr){var p=0;this.FTH.forEach(function(t){if(fr>t+1e-10)p++});return 8-p},
+  band:function(i){if(i===null)return null;if(i<=0.85)return{k:"verde",t:"Accettabile"};if(i<=1)return{k:"giallo",t:"Borderline"};return{k:"rosso",t:"Rischio presente"}},
+  calc:function(x){
+    var sex=x.sx==="x"?"f":x.sx,b=this.block(x.d),fr=x.n/x.min,hr=this.hrow(sex,x.h),fc=this.fcol(fr);
+    var out={sex:sex,fr:fr,block:b,hrow:hr,fcol:fc,phases:[],max:null};
+    if(b===null||!(fr>0))return out;
+    var row=b*3+hr,ci=fc*2+(sex==="f"?1:0),self=this;
+    [["I",x.fi],["S",x.fs]].forEach(function(p){
+      var N=self.T[x.az+p[0]][row][ci],lim=(N===null||N===undefined)?null:N/10;
+      var idx=(lim&&p[1]!==null)?p[1]/lim:null;
+      out.phases.push({ph:p[0],meas:p[1],lim:lim,idx:idx});
+      if(idx!==null&&(out.max===null||idx>out.max))out.max=idx;
+    });
+    out.band=this.band(out.max);return out
+  }
+};
+/*CALC-END*/
+function $(i){return document.getElementById(i)}
+function num(i){var v=parseFloat(String($(i).value).replace(",","."));return isNaN(v)?null:v}
+function f2(n){return n.toLocaleString("it-IT",{minimumFractionDigits:2,maximumFractionDigits:2})}
+function f1(n){return n.toLocaleString("it-IT",{maximumFractionDigits:1})}
+function track(n,d){try{if(window.umami){d?window.umami.track(n,d):window.umami.track(n)}}catch(e){}}
+var started=false;
+function calc(){
+  var x={az:$("az").value,sx:$("sx").value,h:num("hh"),d:num("dd"),n:num("na"),min:num("mn"),fi:num("fi"),fs:num("fs")};
+  var bd=$("band"),tb=$("tb"),v=$("verdict");
+  function none(msg){$("ir").textContent="—";bd.className="band b-nd";bd.textContent=msg;tb.innerHTML="";$("used").textContent="";v.textContent=""}
+  if([x.h,x.d,x.n,x.min].some(function(q){return q===null||q<0})||!(x.min>0)||!(x.n>0))return none("Completa i campi");
+  if(x.fi===null&&x.fs===null)return none("Inserisci almeno una forza");
+  var r=SNOOK.calc(x);
+  if(r.block===null)return none("Distanza fuori tabella");
+  var az=x.az==="push"?"Spinta":"Traino",sexT=r.sex==="m"?"uomini":"donne";
+  tb.innerHTML=r.phases.map(function(p){var nm=p.ph==="I"?"Iniziale":"Mantenimento";
+    var lim=p.lim===null?"non prevista":f1(p.lim)+" kg",me=p.meas===null?"—":f1(p.meas)+" kgf",ix=p.idx===null?"—":f2(p.idx);
+    return"<tr><td>"+az+", fase "+nm.toLowerCase()+"</td><td class='n'>"+me+"</td><td class='n'>"+lim+"</td><td class='n'>"+ix+"</td></tr>"}).join("");
+  $("used").textContent="Valori di tabella usati ("+sexT+"): distanza "+SNOOK.DLAB[r.block]+" m · altezza mani "+SNOOK.HLAB[r.sex][r.hrow]+" cm · frequenza "+SNOOK.FLAB[r.fcol]+" (la tua: "+f2(r.fr)+" al minuto)."+(r.fr>10?" La tua frequenza supera quella massima delle tabelle.":"");
+  if(r.max===null){$("ir").textContent="—";bd.className="band b-nd";bd.textContent="Non calcolabile";
+    v.textContent="Le tabelle non prevedono questa combinazione di distanza e frequenza: un percorso così lungo non è previsto a questa frequenza. Il compito va riprogettato o valutato con il metodo 2 della norma.";return}
+  $("ir").textContent=f2(r.max);bd.className="band b-"+r.band.k;bd.textContent=r.band.t;
+  var worst=r.phases.filter(function(p){return p.idx===r.max})[0];
+  v.textContent=r.max<=0.85?"Le forze misurate rientrano nei limiti delle tabelle per "+sexT+". Controlla comunque la check list del compito: mezzo, pavimento, percorso.":
+    "La fase più critica è quella "+(worst.ph==="I"?"iniziale: si interviene su avvii, arresti e cambi di direzione, ruote e manutenzione del mezzo.":"di mantenimento: si interviene su attrito, ruote, pavimento e lunghezza del percorso.");
+}
+document.querySelectorAll("input,select").forEach(function(e){e.addEventListener("input",function(){calc();if(!started){started=true;track("calc-snook-calcolo")}});e.addEventListener("change",calc)});
+$("pdate").textContent=new Date().toLocaleDateString("it-IT");
+$("print").addEventListener("click",function(){track("calc-snook-stampa");window.print()});
+$("x-demo").addEventListener("click",function(){track("calc-snook-demo")});
+calc();
+window.addEventListener("load",function(){track("calc-snook-apertura")});
+</script>
+</body></html>
